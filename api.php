@@ -208,10 +208,11 @@
 
         $input = json_decode(file_get_contents('php://input'), true);
         $id = $input['id'];
-        $nome_novo = $input['nome_novo'];
-        $email_novo = $input['email_novo'];
+        $nome_novo = $input['nome'];
+        $fk_cursos_id_curso = $input['fk_cursos_id_curso'];
+        $email_novo = $input['email'];
 
-        $sql = "UPDATE alunos SET nome = '$nome_novo', email = '$email_novo' WHERE id = '$id'";
+        $sql = "UPDATE alunos SET nome = '$nome_novo', email = '$email_novo', fk_cursos_id_curso = '$fk_cursos_id_curso' WHERE id = '$id'";
 
         if($conexao->query($sql) == TRUE){
             echo json_encode([
