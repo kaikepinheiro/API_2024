@@ -93,8 +93,8 @@
                         <ul class="nav-right">                            
                             <li class="user-profile header-notification">
                                 <a href="#!" class="waves-effect waves-light">
-                                    <img src="assets/images/avatar-6.jpg" class="img-radius" alt="User-Profile-Image">
-                                    <span>Anderson Vanin</span>
+                                    <img src="assets/images/avatar-6.jpeg" class="img-radius" alt="User-Profile-Image">
+                                    <span>Kaike Pinheiro</span>
                                     <i class="ti-angle-down"></i>
                                 </a>
                                 <ul class="show-notification profile-notification">
@@ -127,9 +127,9 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-80 img-radius" src="assets/images/avatar-6.jpg" alt="User-Profile-Image">
+                                    <img class="img-80 img-radius" src="assets/images/avatar-6.jpeg" alt="User-Profile-Image">
                                     <div class="user-details">
-                                        <span id="more-details">Anderson Vanin<i class="fa fa-caret-down"></i></span>
+                                        <span id="more-details">Kaike Pinheiro<i class="fa fa-caret-down"></i></span>
                                     </div>
                                 </div>
                                 <div class="main-menu-content">
@@ -209,21 +209,21 @@
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="breadcrumb.html" class="waves-effect waves-dark">
+                                            <a href="insere_aluno.php" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Inserir Aluno</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class=" ">
-                                            <a href="button.html" class="waves-effect waves-dark">
+                                            <a href="atualizar_aluno_form.php" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Atualizar Aluno</span>
                                                 <span class="pcoded-mcaret"></span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="accordion.html" class="waves-effect waves-dark">
+                                            <a href="remover_aluno_form.php" class="waves-effect waves-dark">
                                                 <span class="pcoded-micon"><i class="ti-angle-right"></i></span>
                                                 <span class="pcoded-mtext">Remover Aluno</span>
                                                 <span class="pcoded-mcaret"></span>

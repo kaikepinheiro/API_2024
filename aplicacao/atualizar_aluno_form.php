@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Lista Cursos</title>
+    <title>Atualizar Curso</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -47,13 +47,13 @@
                                             <div class="col-xl-12">
                                                 <div class="row">
                                                     <div class="col-xl-8 col-md-10 m-auto">
-                                                        <h2>Relação de Cursos</h2>
+                                                        <h2>Escolha um curso para ser atualizado</h2>
                                                         <table class="table">
                                                             <thead>
                                                                 <tr>
                                                                 <th scope="col">ID</th>
                                                                 <th scope="col">NOME DO ALUNO</th>
-                                                                <th scope="col">ID DO CURSO</th>
+                                                                <th scope="col">OPERAÇÃO</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -63,11 +63,13 @@
                                                                 $data = json_decode($response, true);
 
                                                                 if (isset($data['dados'])) {                                                                    
-                                                                    foreach ($data['dados'] as $curso) {
+                                                                    foreach ($data['dados'] as $aluno) {
                                                                         echo "<tr>";
-                                                                        echo '<td>' . $curso['id'] . '</td>';
-                                                                        echo '<td>' . $curso['nome'] . '</td>';
-                                                                        echo '<td>' . $curso['fk_cursos_id_curso'] . '</td>';
+                                                                        echo '<td>' . $aluno['id'] . '</td>';
+                                                                        echo '<td>' . $aluno['nome'] . '</td>';
+                                                                        echo '<td> 
+                                                                                <a href="atualiza_aluno.php?id='.$aluno['id'].'" class="btn btn-primary">ATUALIZAR</a> 
+                                                                            </td>';
                                                                         echo "</tr>";            
                                                                     }
                                                                 } else {

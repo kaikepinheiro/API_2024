@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-    <title>Lista Cursos</title>
+    <title>Insere Curso</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -47,35 +47,40 @@
                                             <div class="col-xl-12">
                                                 <div class="row">
                                                     <div class="col-xl-8 col-md-10 m-auto">
-                                                        <h2>Relação de Cursos</h2>
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                <th scope="col">ID</th>
-                                                                <th scope="col">NOME DO ALUNO</th>
-                                                                <th scope="col">ID DO CURSO</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <?php
-                                                                $url = 'http://localhost/exercicio/api.php/alunos';
-                                                                $response = file_get_contents($url);
-                                                                $data = json_decode($response, true);
+                                                        <h2>Insere novo aluno</h2>
+                                                        <form action="cadastra_aluno.php" method="POST">
+                                                            <div class="mb-3">
+                                                                <label for="nome" class="form-label">Nome do Aluno</label>
+                                                                <input type="text" id="nome" name="nome" class="form-control" placeholder="Digite o nome do aluno" required>
+                                                            </div> 
 
-                                                                if (isset($data['dados'])) {                                                                    
-                                                                    foreach ($data['dados'] as $curso) {
-                                                                        echo "<tr>";
-                                                                        echo '<td>' . $curso['id'] . '</td>';
-                                                                        echo '<td>' . $curso['nome'] . '</td>';
-                                                                        echo '<td>' . $curso['fk_cursos_id_curso'] . '</td>';
-                                                                        echo "</tr>";            
+                                                            <div class="mb-3">
+                                                                <label for="email" class="form-label">Email do Aluno</label>
+                                                                <input type="text" id="email" name="email" class="form-control" placeholder="Digite o email do aluno" required>
+                                                            </div> 
+
+                                                            <div class="mb-3">
+                                                                <label for="cursos-dropdown" class="form-label">Nome do Curso</label>
+                                                                <?php
+                                                                    $url = 'http://localhost/exercicio/api.php/cursos';
+                                                                    $response = file_get_contents($url);
+                                                                    $data = json_decode($response, true);
+
+                                                                    if (isset($data['dados'])) {
+                                                                        echo '<select class="form-select" id="cursos-dropdown" name="curso_id" required>';
+                                                                        echo '<option value="" disabled selected>Selecione um curso</option>';
+                                                                        foreach ($data['dados'] as $curso) {
+                                                                            echo '<option value="' . $curso['id_curso'] . '">' . htmlspecialchars($curso['nome_curso']) . '</option>';
+                                                                        }
+                                                                        echo '</select>';
+                                                                    } else {
+                                                                        echo '<p>Nenhum curso encontrado.</p>';
                                                                     }
-                                                                } else {
-                                                                    echo '<p>Nenhum curso encontrado.</p>';
-                                                                }
-                                                            ?>                                                                    
-                                                            </tbody>
-                                                        </table>
+                                                                ?>
+                                                            </div>
+
+                                                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>
